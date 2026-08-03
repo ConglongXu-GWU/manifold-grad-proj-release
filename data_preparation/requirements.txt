@@ -1,0 +1,7 @@
+# Dataset-generation environment used by the source snapshot.
+# Python: 3.10.9
+torch==2.12.0
+torchvision==0.27.0
+pandas==2.0.3
+pyarrow==24.0.0
+Pillow==9.4.0

@@ -1,0 +1,10 @@
+routine,retraction,rank,lmbda,r,config_id,beta,sigma,initial_step,max_backtracks,final_rmse,final_wlra_loss,final_data_loss,final_objective,final_regularized_objective,best_rmse
+armijo_feasible_direction,qr,32,1e-06,1625967.125,armijo_feasible_direction_d2c48abf88ae,0.9,0.75,0.5,200,0.21391244232654572,845801.25,845801.25,845801.25,,
+armijo_feasible_direction,qr,32,0.0001,162596.71875,armijo_feasible_direction_ac18b1c16266,0.9,0.75,0.5,200,0.21391244232654572,845801.25,845801.25,845801.25,,
+armijo_feasible_direction,qr,32,0.01,16259.671875,armijo_feasible_direction_bc38744fe9ec,0.9,0.75,0.5,200,0.21391244232654572,845801.25,845801.25,845801.25,,
+armijo_feasible_direction,qr,64,1e-06,1625967.125,armijo_feasible_direction_aefee91ce9bb,0.9,0.75,0.5,200,0.22259891033172607,617776.6875,617776.6875,617776.6875,,
+armijo_feasible_direction,qr,64,0.0001,162596.71875,armijo_feasible_direction_d2b686a3891a,0.9,0.75,0.5,200,0.22259891033172607,617776.6875,617776.6875,617776.6875,,
+armijo_feasible_direction,qr,64,0.01,16259.671875,armijo_feasible_direction_cdbacd506d71,0.9,0.75,0.5,200,0.22259891033172607,617776.6875,617776.6875,617776.6875,,
+armijo_feasible_direction,qr,128,1e-06,1625967.125,armijo_feasible_direction_33c90efb7d5c,0.9,0.75,0.3,200,0.2724854350090027,344840.8125,344840.8125,344840.8125,,
+armijo_feasible_direction,qr,128,0.0001,162596.71875,armijo_feasible_direction_6d886cefa3e0,0.9,0.75,0.3,200,0.2724854350090027,344840.8125,344840.8125,344840.8125,,
+armijo_feasible_direction,qr,128,0.01,16259.671875,armijo_feasible_direction_f3e30da66d93,0.9,0.75,0.3,200,0.2724854350090027,344840.8125,344840.8125,344840.8125,,

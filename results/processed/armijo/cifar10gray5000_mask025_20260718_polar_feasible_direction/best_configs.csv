@@ -1,0 +1,10 @@
+routine,retraction,rank,lmbda,r,config_id,beta,sigma,initial_step,max_backtracks,final_rmse,final_wlra_loss,final_data_loss,final_objective,final_regularized_objective,best_rmse,mean_armijo_evaluations
+armijo_feasible_direction,polar,32,1e-06,1047577.8125,armijo_feasible_direction_e06d8bb95f22,0.5,0.5,0.3,200,0.1744382083415985,101920.8828125,101920.8828125,101920.8828125,,,18.62
+armijo_feasible_direction,polar,32,0.0001,104757.7890625,armijo_feasible_direction_1e1e77ca3ee5,0.5,0.5,0.3,200,0.1744382083415985,101920.8828125,101920.8828125,101920.8828125,,,18.62
+armijo_feasible_direction,polar,32,0.01,10475.7783203125,armijo_feasible_direction_ae19085e80c3,0.5,0.5,0.3,200,0.1744382083415985,101920.8828125,101920.8828125,101920.8828125,,,18.62
+armijo_feasible_direction,polar,64,1e-06,1047577.8125,armijo_feasible_direction_bb69dfa24b07,0.75,0.5,1.0,200,0.18802760541439056,91225.703125,91225.703125,91225.703125,,,53.83
+armijo_feasible_direction,polar,64,0.0001,104757.7890625,armijo_feasible_direction_674e8a832532,0.75,0.5,1.0,200,0.18802760541439056,91225.703125,91225.703125,91225.703125,,,53.83
+armijo_feasible_direction,polar,64,0.01,10475.7783203125,armijo_feasible_direction_274394eea423,0.75,0.5,1.0,200,0.18802760541439056,91225.703125,91225.703125,91225.703125,,,53.83
+armijo_feasible_direction,polar,128,1e-06,1047577.8125,armijo_feasible_direction_37579fd62cc0,0.75,0.5,0.5,200,0.23998504877090454,85824.125,85824.125,85824.125,,,46.795
+armijo_feasible_direction,polar,128,0.0001,104757.7890625,armijo_feasible_direction_ead76ac3a00f,0.75,0.5,0.5,200,0.23998504877090454,85824.125,85824.125,85824.125,,,46.795
+armijo_feasible_direction,polar,128,0.01,10475.7783203125,armijo_feasible_direction_d7ff00c352dc,0.75,0.5,0.5,200,0.23998504877090454,85824.125,85824.125,85824.125,,,46.795

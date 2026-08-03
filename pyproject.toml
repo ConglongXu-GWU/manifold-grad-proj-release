@@ -1,0 +1,8 @@
+[project]
+name = "manifold-grad-proj"
+version = "0.1.0"
+license = { file = "LICENSE" }
+dependencies = ["torch==2.12.0", "numpy", "matplotlib", "scipy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

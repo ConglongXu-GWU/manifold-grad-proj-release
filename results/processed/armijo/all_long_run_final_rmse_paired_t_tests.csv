@@ -1,0 +1,3 @@
+comparison,metric,n,degrees_of_freedom,mean_difference,t_statistic,p_value,alpha,outperforms_benchmark
+Feasible Direction (Main Routine) vs Regularized Armijo (Benchmark),final RMSE,108,107,-0.0002463188160348822,-0.9209292282100132,0.17957953817515743,0.05,False
+Projection Arc (Main Routine) vs Regularized Armijo (Benchmark),final RMSE,108,107,-0.00022061141552748504,-0.8556141253965557,0.19706158252973005,0.05,False
