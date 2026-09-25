@@ -1,5 +1,9 @@
 # Retraction-Based Armijo Methods for Matrix Completion
 
+Use tag `v1.0.1` for the verified release. It adds a cross-platform test-order
+fix to `v1.0.0`; algorithms and reference results are identical. The original
+tag is retained without rewriting history.
+
 This repository contains a compact implementation of three Armijo routines for
 weighted low-rank matrix completion on a product of two Stiefel manifolds and a
 Euclidean factor:
