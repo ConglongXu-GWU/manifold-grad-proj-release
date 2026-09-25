@@ -977,6 +977,8 @@ def test_selected_history_runner_falls_back_and_writes_manifest(monkeypatch, tmp
         for path in (raw_root / "history").rglob("*.json")
         if path.name != "grid_config.json"
     ]
+    records.sort(key=lambda record: record["source_candidate_rank"])
+    assert [record["source_candidate_rank"] for record in records] == [1, 2]
     assert [record["status"] for record in records] == ["failed", "success"]
     manifest = (tmp_path / "processed" / "history" / "selected_history_attempts.csv").read_text()
     assert "max_backtracks_exceeded" in manifest
