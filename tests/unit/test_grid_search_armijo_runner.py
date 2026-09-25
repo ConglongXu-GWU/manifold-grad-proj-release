@@ -60,10 +60,10 @@ def test_parse_csv_routines_accepts_all_alias():
     assert runner.parse_csv_routines("all") == list(runner.ROUTINES)
 
 
-def test_parse_csv_retractions_accepts_all_alias_and_rejects_unknown_name():
+def test_parse_csv_retractions_accepts_active_all_alias_and_rejects_cayley():
     assert runner.parse_csv_retractions("all") == ["qr", "polar"]
-    with pytest.raises(ValueError, match="unsupported"):
-        runner.parse_csv_retractions("unsupported")
+    with pytest.raises(ValueError, match="cayley"):
+        runner.parse_csv_retractions("cayley")
 
 
 def test_parse_r_auto_and_resolve_radius():

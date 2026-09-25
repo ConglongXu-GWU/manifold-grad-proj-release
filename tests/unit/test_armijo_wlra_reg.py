@@ -82,12 +82,12 @@ def test_armijo_wlra_reg_backtracks_on_alpha(monkeypatch):
     assert result.armijo_evaluations == 2
 
 
-def test_armijo_wlra_reg_rejects_unsupported_retraction():
+def test_armijo_wlra_reg_rejects_cayley_retraction():
     point = _point()
     a, w = _data()
 
     with pytest.raises(ValueError, match="qr.*polar"):
-        armijo_wlra_reg(point, a, w, lmbda=0.1, s=0.2, beta=0.5, sigma=0.25, retraction="unsupported")
+        armijo_wlra_reg(point, a, w, lmbda=0.1, s=0.2, beta=0.5, sigma=0.25, retraction="cayley")
 
 
 def test_armijo_wlra_reg_zero_step_returns_stationary_result():

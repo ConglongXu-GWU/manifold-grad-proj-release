@@ -136,7 +136,7 @@ def test_resolve_retraction_accepts_supported_names():
 
 def test_resolve_retraction_rejects_unknown_name():
     with pytest.raises(ValueError, match="retraction"):
-        resolve_retraction("unsupported")
+        resolve_retraction("cayley")
 
 
 def test_is_zero_step_detects_zero_and_nonzero_steps():

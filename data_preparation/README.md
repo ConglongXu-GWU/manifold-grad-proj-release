@@ -98,8 +98,8 @@ python -m data_preparation.prepare_cifar10 \
   --output-dir data
 ```
 
-Full-train artifacts remain ignored because they exceed normal GitHub file-size
-limits. Sampled artifact tracking is unchanged.
+All dataset binaries, including full-train and sampled artifacts, are local
+outputs and are excluded from this public code release.
 
 ## Additional controls
 

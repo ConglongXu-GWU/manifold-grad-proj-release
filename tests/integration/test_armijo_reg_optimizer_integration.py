@@ -123,11 +123,11 @@ def test_optimize_reg_armijo_forwards_retraction(monkeypatch):
     assert calls == ["polar"]
 
 
-def test_optimize_reg_armijo_rejects_unsupported_retraction():
+def test_optimize_reg_armijo_rejects_cayley_retraction():
     a_full, a, w = _data()
 
     with pytest.raises(ValueError, match="qr.*polar"):
-        optimize_reg_armijo(a_full, a, w, k=2, iteration_numbers=1, retraction="unsupported", initial_fn=_initial)
+        optimize_reg_armijo(a_full, a, w, k=2, iteration_numbers=1, retraction="cayley", initial_fn=_initial)
 
 
 def test_optimize_reg_armijo_raises_when_armijo_step_fails(monkeypatch):

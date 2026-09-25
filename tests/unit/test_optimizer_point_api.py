@@ -1,7 +1,10 @@
 import torch
 
+import manifold_opt.optim.gradient_descent as gradient_descent
 from manifold_opt.optim.gradient_descent import (
     optimize_constraint_armijo,
+    optimize_constraint_constant,
+    optimize_reg,
     optimize_reg_armijo,
 )
 import manifold_opt.optim.initial as initial
@@ -82,6 +85,18 @@ def test_initial_lr_routes_mps_input_to_cpu_before_svd(monkeypatch):
     assert all(call[1] == {"device": torch.device("mps"), "dtype": torch.float32} for call in to_calls)
 
 
+def test_optimize_reg_returns_point_api_blocks_with_zero_iterations():
+    a_full, a, w = _data()
+
+    _, _, params, grads = optimize_reg(a_full, a, w, k=2, iteration_numbers=0)
+
+    assert set(params) == {"U", "x", "V"}
+    assert set(grads) == {"xi_U", "x_hat", "xi_V"}
+    assert params["U"].shape == grads["xi_U"].shape
+    assert params["x"].shape == grads["x_hat"].shape
+    assert params["V"].shape == grads["xi_V"].shape
+
+
 def test_optimize_reg_armijo_runs_one_iteration_with_point_api_blocks():
     a_full, a, w = _data()
 
@@ -124,3 +139,44 @@ def test_armijo_optimizers_final_rmse_mode_records_only_final_rmse():
     assert len(reg_rmses) == 1
     assert len(constrained_losses) == 2
     assert len(constrained_rmses) == 1
+
+
+def test_optimize_constraint_constant_runs_one_iteration_with_point_api_blocks():
+    a_full, a, w = _data()
+
+    losses, rmses, params, grads = optimize_constraint_constant(a_full, a, w, k=2, r=1.0, iteration_numbers=1)
+
+    assert len(losses) == 1
+    assert len(rmses) == 1
+    assert params["U"].shape == grads["xi_U"].shape
+    assert params["x"].shape == grads["x_hat"].shape
+    assert params["V"].shape == grads["xi_V"].shape
+
+
+def test_constant_optimizers_forward_polar_retraction(monkeypatch):
+    a_full, a, w = _data()
+    calls = []
+
+    def fake_retraction(point, step):
+        calls.append((point, step))
+        return point
+
+    monkeypatch.setattr(gradient_descent, "retraction_polar", fake_retraction)
+
+    optimize_reg(a_full, a, w, k=2, iteration_numbers=1, retraction="polar")
+    optimize_constraint_constant(a_full, a, w, k=2, r=1.0, iteration_numbers=1, retraction="polar")
+
+    assert len(calls) == 2
+
+
+def test_constant_optimizers_reject_cayley_retraction():
+    a_full, a, w = _data()
+
+    for optimizer in (optimize_reg, optimize_constraint_constant):
+        try:
+            optimizer(a_full, a, w, k=2, iteration_numbers=1, retraction="cayley")
+        except ValueError as exc:
+            assert "qr" in str(exc)
+            assert "polar" in str(exc)
+        else:
+            raise AssertionError("Expected ValueError for unsupported constant-step retraction.")

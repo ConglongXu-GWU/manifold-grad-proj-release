@@ -90,12 +90,12 @@ def test_feasible_direction_backtracks_on_alpha_without_reprojecting(monkeypatch
     assert projection_calls == 1
 
 
-def test_feasible_direction_rejects_unsupported_retraction():
+def test_feasible_direction_rejects_cayley_retraction():
     point = _point()
     a, w = _data()
 
     with pytest.raises(ValueError, match="qr.*polar"):
-        armijo_feasible_direction(point, a, w, r=10.0, s=0.2, beta=0.5, sigma=0.25, retraction="unsupported")
+        armijo_feasible_direction(point, a, w, r=10.0, s=0.2, beta=0.5, sigma=0.25, retraction="cayley")
 
 
 def test_feasible_direction_zero_step_returns_stationary_result():

@@ -93,12 +93,12 @@ def test_projection_arc_backtracks_on_s_and_reprojects(monkeypatch):
     assert all(torch.allclose(actual, expected) for actual, expected in zip(result.step, expected_step))
 
 
-def test_projection_arc_rejects_unsupported_retraction():
+def test_projection_arc_rejects_cayley_retraction():
     point = _point()
     a, w = _data()
 
     with pytest.raises(ValueError, match="qr.*polar"):
-        armijo_projection_arc(point, a, w, r=10.0, s_bar=0.2, beta=0.5, sigma=0.25, retraction="unsupported")
+        armijo_projection_arc(point, a, w, r=10.0, s_bar=0.2, beta=0.5, sigma=0.25, retraction="cayley")
 
 
 def test_projection_arc_zero_step_returns_stationary_result():

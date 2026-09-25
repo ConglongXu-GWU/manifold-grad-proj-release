@@ -49,7 +49,7 @@ def parse_args() -> argparse.Namespace:
         "--merged-font-size",
         type=float,
         default=34.0,
-        help="Source font size for merged figures.",
+        help="Source font size for merged figures (34 pt renders near 9 pt at manuscript full width).",
     )
     return parser.parse_args()
 

@@ -12,7 +12,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_RAW_DIR = REPO_ROOT / "results" / "raws" / "armijo"
 DEFAULT_PROCESSED_DIR = REPO_ROOT / "results" / "processed" / "armijo"
-DEFAULT_MANUSCRIPT_TABLE = REPO_ROOT / "paper" / "tables" / "full_train_20260618_armijo_grid_table.tex"
+DEFAULT_MANUSCRIPT_TABLE = REPO_ROOT / "results" / "processed" / "armijo" / "full_train_20260618_armijo_grid_table.tex"
 DEFAULT_RUN_PREFIX = "full_train_20260618"
 DEFAULT_DATASET_FILENAME = "mnist0_n600_mask0.70_seed42_train.pt"
 DEFAULT_PATTERNS = (

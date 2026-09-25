@@ -34,7 +34,7 @@ DEFAULT_OUTPUT_CSV = (
     / "all_grid_search_paired_t_tests.csv"
 )
 DEFAULT_OUTPUT_TEX = (
-    REPO_ROOT / "paper" / "tables" / "all_grid_search_paired_t_test_table.tex"
+    DEFAULT_OUTPUT_CSV.with_suffix(".tex")
 )
 DEFAULT_LONG_RUN_OUTPUT_CSV = (
     REPO_ROOT
@@ -44,10 +44,7 @@ DEFAULT_LONG_RUN_OUTPUT_CSV = (
     / "all_long_run_final_rmse_paired_t_tests.csv"
 )
 DEFAULT_LONG_RUN_OUTPUT_TEX = (
-    REPO_ROOT
-    / "paper"
-    / "tables"
-    / "all_long_run_final_rmse_paired_t_test_table.tex"
+    DEFAULT_LONG_RUN_OUTPUT_CSV.with_suffix(".tex")
 )
 DEFAULT_DATASET_PREFIXES = (
     ("Sampled MNIST (masking rate 0.5)", "digits6000_20260707"),

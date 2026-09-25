@@ -1,5 +1,5 @@
 comparison,metric,n,degrees_of_freedom,mean_difference,t_statistic,p_value,alpha,outperforms_benchmark
-Feasible Direction (Main Routine) vs Regularized Armijo (Benchmark),best RMSE,126,125,-0.00029945621887842816,-2.570962258387008,0.005656706220280688,0.05,True
-Feasible Direction (Main Routine) vs Regularized Armijo (Benchmark),mean RMSE,126,125,-4.896425531180597e-05,-2.2214204873271615,0.014061301819177897,0.05,True
-Projection Arc (Main Routine) vs Regularized Armijo (Benchmark),best RMSE,126,125,-0.0003242680714243934,-2.725830166740488,0.00366753910612911,0.05,True
-Projection Arc (Main Routine) vs Regularized Armijo (Benchmark),mean RMSE,126,125,-7.327063943330024e-05,-2.75208889333496,0.003401633460824333,0.05,True
+Feasible Direction (Main Routine) vs Regularized Armijo (Benchmark),best RMSE,144,143,-0.000261676704718007,-2.5414267583403163,0.006053037131829855,0.05,True
+Feasible Direction (Main Routine) vs Regularized Armijo (Benchmark),mean RMSE,144,143,-4.820592076825374e-05,-2.4839478069731684,0.0070739735678994374,0.05,True
+Projection Arc (Main Routine) vs Regularized Armijo (Benchmark),best RMSE,144,143,-0.00024724741362863116,-2.3231787119081986,0.010789797622041328,0.05,True
+Projection Arc (Main Routine) vs Regularized Armijo (Benchmark),mean RMSE,144,143,-4.9023313907542404e-05,-2.002890191417609,0.0235396180365563,0.05,True
